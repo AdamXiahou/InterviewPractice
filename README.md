@@ -5,3 +5,6 @@
 每日最少leetcode两题，有余力尽量往前赶
 
 # Git常用命令
+$ git add .    
+$ git commit  
+$ git push origin master
