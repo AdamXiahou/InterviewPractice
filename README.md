@@ -7,4 +7,9 @@
 # Git常用命令
 $ git add .    
 $ git commit  
-$ git push origin master
+$ git push origin <branch name>
+
+$ git checkout <branch name>
+$ git pull
+$ git branch -a
+$ git status
