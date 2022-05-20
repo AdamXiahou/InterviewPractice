@@ -5,11 +5,11 @@
 每日最少leetcode两题，有余力尽量往前赶
 
 # Git常用命令
-$ git add .    
-$ git commit  
-$ git push origin <branch name>
+`$ git add .   ` 
+`$ git commit ` 
+`$ git push origin <branch name>`
 
-$ git checkout <branch name>
-$ git pull
-$ git branch -a
-$ git status
+`$ git checkout <branch name>`
+`$ git pull`
+`$ git branch -a`
+`$ git status`
