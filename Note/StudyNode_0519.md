@@ -43,13 +43,13 @@
 `insert into teacher(教师号,教师姓名)values('0004' , '');`
 
 ### Questions
-1. 查询课程编号为“0002”的总成绩
+1. 查询课程编号为“0002”的总成绩    
 `SELECT SUM(成绩) FROM score WHERE 课程号 = '0002';`
 
-2. 查询各科成绩最高和最低的分
+2. 查询各科成绩最高和最低的分     
 `SELECT 课程号,MAX(成绩) as 最高分,MIN(成绩) as 最低分 FROM score GROUP BY 课程号;`
 
-3. 查询平均成绩大于60分学生的学号
+3. 查询平均成绩大于60分学生的学号   
 `SELECT 学号 FROM score GROUP BY 学号 HAVING AVG(成绩)>60;`
 
 ### 要点：
@@ -60,7 +60,9 @@
 3. HAVING 子句可以让我们筛选分组后的各组数据
 
 # 微服务
-``[ApiController]
+
+<code>
+[ApiController]
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
 {
@@ -89,12 +91,5 @@ public class WeatherForecastController : ControllerBase
         .ToArray();
     }
 }
-``
-
-<code>
-
-            Date = DateTime.Now.AddDays(index),
-            TemperatureC = rng.Next(-20, 55),
-            Summary = Summaries[rng.Next(Summaries.Length)]
 </code>
 
