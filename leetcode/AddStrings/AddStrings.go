@@ -1,4 +1,4 @@
-package AddString
+package AddStrings
 
 import "strconv"
 
