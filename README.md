@@ -1,8 +1,12 @@
-  
-先刷leetcode算法，再刷数据库
-其他知识每日积累，并更新在git repository里
+# 学习计划
 
-每日最少leetcode两题，有余力尽量往前赶
+### 学习周期5/21-6/4 
+1. 前五天完成SQL视频 + 50道SQL面试题 + 10道Leetcode算法题      
+2. 后十天完成C#视频 + 20道Leetcode算法题 + 概念名词补充      
+### 数据库视频     
+https://www.bilibili.com/video/BV1qF411u7iu?spm_id_from=333.999.0.0   
+### C#视频     
+https://www.youtube.com/watch?v=GhQdlIFylQ8&t=123s
 
 # Git常用命令
 `$ git add .   `    
