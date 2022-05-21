@@ -31,7 +31,7 @@ func isBalanced(root *TreeNode) bool {
 }    
 // _return abs(height(root.Left) - height(root.Right)) <= 1_确保当前根节点是平衡二叉树      
 // _isBalanced(root.Left)_ 左递归      
-//_isBalanced(root.Right)_  右递归      
+// _isBalanced(root.Right)_  右递归      
 //比较二叉树最大深度算法    
 func height(root *TreeNode) int {    
     if root == nil {    
