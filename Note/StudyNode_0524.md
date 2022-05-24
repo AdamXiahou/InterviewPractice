@@ -59,7 +59,7 @@ func min(x, y int) int {
 你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。      
 此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 3a 或 2[4] 的输入。      
 思路：       
-方法一：栈操作      //利用栈来辅助完成字符串的解码
+方法一：栈操作      //利用栈来辅助完成字符串的解码       
 func decodeString(s string) string {      
     stk := []string{}      
     ptr := 0      
@@ -82,9 +82,9 @@ func decodeString(s string) string {
                 sub[i], sub[len(sub)-i-1] = sub[len(sub)-i-1], sub[i]      
             }      
             stk = stk[:len(stk)-1]      
-            repTime, _ := strconv.Atoi(stk[len(stk)-1])      //strconv.Atoi (str string) (int, error)将字符串类型转换为int类型
+            repTime, _ := strconv.Atoi(stk[len(stk)-1])      //strconv.Atoi (str string) (int, error)将字符串类型转换为int类型       
             stk = stk[:len(stk)-1]      
-            t := strings.Repeat(getString(sub), repTime)      //解码为重复字符串
+            t := strings.Repeat(getString(sub), repTime)      //解码为重复字符串       
             stk = append(stk, t)      
         }      
     }      
@@ -107,7 +107,7 @@ func getString(v []string) string {
     return ret      
 }      
       
-方法二：递归            //从左往右依次遍历如果有数字就跳过[进入递归
+方法二：递归            //从左往右依次遍历如果有数字就跳过[进入递归       
 var (      
     src string      
     ptr int      
@@ -126,7 +126,7 @@ func getString() string {
     cur := src[ptr]      
     repTime := 1      
     ret := ""      
-    if cur >= '0' && cur <= '9' {      //判断数字
+    if cur >= '0' && cur <= '9' {      //判断数字       
         repTime = getDigits()      
         ptr++      
         str := getString()      
