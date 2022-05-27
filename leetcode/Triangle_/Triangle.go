@@ -1,4 +1,4 @@
-package Triangle
+package Triangle_
 
 import "math"
 
