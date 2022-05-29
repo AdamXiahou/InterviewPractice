@@ -303,3 +303,30 @@ undo.log
 作用：
 1. 读操作时不会陷入block和死锁的问题中，SNAPSHOT本身提高了数据库系统的事务处理的性能。
 2. 避免了脏读，非一致性读，以及丢失更新，和不可重复读等多个问题
+## 4. 隔离级别演示
+查看当前的隔离级别
+DBCC USEROPTIONS
+### 1.脏读的演示
+设置隔离级别为read uncommit;
+--set transaction isolation leve1 <隔离级别>
+先将两个账号的金额都恢复成1000元。
+update account set balance=1000;
+1. 打开A窗口登录，设置隔离级别为最低
+set transaction isolation level1 read uncommitted
+2. 打开B窗口，AB窗口都开启事务
+set transaction isolation level1 read uncommitted
+3. A窗口更新2个人的账户数据，未提交
+--张三账号-500
+update account set balance = balance - 500 where name = '张三'
+--李四账号+500
+update account set balance = balance + 500 where name = '李四'
+4. B窗口查询账户
+张三 500 李四 1500
+5. A窗口回滚
+6. 查询B窗口
+张三 1000 李四 1000
+脏读非常危险，比如张三向李四购买商品，张三开启事务，向李四账号转入500块，然后打电话给李四说钱已经转了。李四一查询钱到账了，发货给张三，张三抽到货之后回滚事务，不给钱了
+**解决脏读问题**：将全局隔离级别进行提升
+将数据进行恢复：
+UPDATE account SET balance = 1000；
+

@@ -17,8 +17,8 @@ func reverseString(s []byte) {
          
 ### 不同的二叉搜索树 II
 题目：给你一个整数 n ，请你生成并返回所有由 n 个节点组成且节点值从 1 到 n 互不相同的不同 二叉搜索树 。可以按 任意顺序 返回答案。         
-思路：回溯         
-Definition for a binary tree node.         
+思路：依次把左右子树所有的排列组合方式与n的节点数依次列出组合递归         
+//Definition for a binary tree node.         
 type TreeNode struct {         
       Val int         
       Left *TreeNode         
