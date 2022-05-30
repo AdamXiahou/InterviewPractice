@@ -329,4 +329,9 @@ update account set balance = balance + 500 where name = '李四'
 **解决脏读问题**：将全局隔离级别进行提升
 将数据进行恢复：
 UPDATE account SET balance = 1000；
-
+1. A窗口设置隔离级别为： repeatable read
+set tran isolation level repeatable read;
+2. B窗口开启事务，查询数据，先不提交
+begin tran;
+select * from account;
+3. 在A窗口开启事务，并更新数据，此时你会发现，事务会一直处于等待状态，无法提交，直到B窗口中的事务提交完毕。
