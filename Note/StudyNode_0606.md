@@ -41,7 +41,7 @@ func swap(nums []int, i, j int) {
 }         
 ### 归并排序         
 题目：用go实现并归排序         
-思路：         //分治法把数组不断细分，再排序后合并
+思路：         //分治法把数组不断细分，再排序后合并            
 func MergeSort(nums []int) []int {         
     return mergeSort(nums)         
 }         
